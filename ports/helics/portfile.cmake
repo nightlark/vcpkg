@@ -13,6 +13,10 @@ if("zmq" IN_LIST FEATURES)
 	set(HELICS_WITH_ZMQ ON)
 endif()
 
+if("ipc" IN_LIST FEATURES)
+	set(HELICS_WITH_IPC ON)
+endif()
+
 vcpkg_configure_cmake(
 	SOURCE_PATH ${SOURCE_PATH}
 	PREFER_NINJA
@@ -21,7 +25,7 @@ vcpkg_configure_cmake(
 		-DBUILD_HELICS_TESTS=OFF
 		-DAUTOBUILD_ZMQ=OFF
 		-DENABLE_ZMQ_CORE=${HELICS_WITH_ZMQ}
-		#-DENABLE_IPC_CORE=ON
+		-DENABLE_IPC_CORE=${HELICS_WITH_IPC}
 )
 
 vcpkg_install_cmake()
