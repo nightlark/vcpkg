@@ -1,10 +1,9 @@
 Source: helics
-Version: 2.0.0-beta.3
-Build-Depends: boost-core, boost-program-options, boost-filesystem, boost-system, boost-interprocess, boost-asio, boost-algorithm, boost-iostreams, boost-date-time
+Version: 2.1.0
+Build-Depends: boost-core, boost-interprocess, boost-algorithm, boost-iostreams, boost-scope-exit
 Description: HELICS is a co-simulation framework for coupling different simulators, synchronizing their clocks and allowing them to exchange data.
 Default-Features: zmq
 
 Feature: zmq
 Build-Depends: zeromq
 Description: ZeroMQ support for HELICS
-

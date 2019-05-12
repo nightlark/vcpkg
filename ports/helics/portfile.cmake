@@ -3,7 +3,7 @@ include(vcpkg_common_functions)
 vcpkg_from_github(
 	OUT_SOURCE_PATH SOURCE_PATH
 	REPO GMLC-TDC/HELICS-src
-	REF v2.0.0-beta.3
+	REF v2.1.0
 	SHA512 88fedbd0e1d6172524eec434ecf8429224c34e27677644607ea947a39ccd81c64bbab9f2160b45b0c40dce3c8e8cc483f207cfd04422d176936c5ca7457ea3a8  
 	HEAD_REF develop
 )
@@ -20,8 +20,8 @@ vcpkg_configure_cmake(
 		-DBUILD_HELICS_EXAMPLES=OFF
 		-DBUILD_HELICS_TESTS=OFF
 		-DAUTOBUILD_ZMQ=OFF
-		-DENABLE_ZeroMQ=${HELICS_WITH_ZMQ}
-		#-DDISABLE_IPC_CORE=ON
+		-DENABLE_ZMQ_CORE=${HELICS_WITH_ZMQ}
+		#-DENABLE_IPC_CORE=ON
 )
 
 vcpkg_install_cmake()
